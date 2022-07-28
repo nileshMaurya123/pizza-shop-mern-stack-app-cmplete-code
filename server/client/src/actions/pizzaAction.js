@@ -1,10 +1,12 @@
 import axios from "axios";
 import swal from "sweetalert";
+import App from "../App";
+
 export const getAllPizzas = () => async (dispatch) => {
   dispatch({ type: "GET_PIZZAS_REQUEST" });
   try {
     const response = await axios.get("/api/pizzas/getAllPizzas");
-    // console.log(response.data);
+    console.log("response ======",response.data);
     dispatch({ type: "GET_PIZZAS_SUCCESS", payload: response.data });
   } catch (err) {
     dispatch({ type: "GET_PIZZAS_FAIL", payload: err });
@@ -72,3 +74,4 @@ export const filterPizza = (searchkey, category) => async (dispatch) => {
     dispatch({ type: "GET_PIZZAS_FAIL", payload: error });
   }
 };
+export default App;

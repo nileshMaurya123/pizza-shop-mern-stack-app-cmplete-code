@@ -26,7 +26,7 @@ function App() {
         <Route path="/about" component={About} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/policy" component={Policy} exact />
-        <Route path="/" component={HomeScreen} />
+        <Route path="/" component={HomeScreen} exact />
       </Switch>
     </BrowserRouter>
   );
